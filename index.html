@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>UEM CONECTA+ TALENTOS</title>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f6f3;--ink:#1c2430;--mut:#5d6675;--line:#dde1e6;--card:#fff;--pri:#1f3f77;--prit:#fff;--ok:#1d7a55;--okbg:#e2f2e9;--warn:#7a5200;--warnbg:#fbf0d5;--tag:#e8eefa;--tagt:#1f3f77;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161d;--ink:#e7eaf0;--mut:#98a2b3;--line:#2a3240;--card:#1a2029;--pri:#8fb0ee;--prit:#10151c;--ok:#5fd0a0;--okbg:#17342a;--warn:#f0c36a;--warnbg:#3a2f14;--tag:#243252;--tagt:#b9cdf5}}
+:root[data-theme="dark"]{--bg:#12161d;--ink:#e7eaf0;--mut:#98a2b3;--line:#2a3240;--card:#1a2029;--pri:#8fb0ee;--prit:#10151c;--ok:#5fd0a0;--okbg:#17342a;--warn:#f0c36a;--warnbg:#3a2f14;--tag:#243252;--tagt:#b9cdf5}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 Figtree,system-ui,Arial,sans-serif;padding:20px 16px 40px}
+.w{max-width:1000px;margin:0 auto}
+h1{font-size:24px;font-weight:700;letter-spacing:-.01em}
+.sub{color:var(--mut);margin:2px 0 16px;max-width:640px}
+nav{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:18px}
+nav button{font:inherit;font-weight:500;background:none;border:0;border-bottom:3px solid transparent;padding:10px 14px;color:var(--mut);cursor:pointer}
+nav button[aria-selected=true]{color:var(--pri);border-color:var(--pri)}
+button:focus-visible,select:focus-visible{outline:2px solid var(--pri);outline-offset:2px}
+.g{display:grid;grid-template-columns:260px 1fr;gap:16px;align-items:start}
+@media(max-width:720px){.g{grid-template-columns:1fr}}
+.c{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:12px}
+.c h2{font-size:16px;font-weight:600;margin-bottom:8px}
+.li{display:block;width:100%;text-align:left;font:inherit;background:none;border:0;border-left:3px solid transparent;padding:8px 10px;cursor:pointer;color:var(--ink);border-radius:0 6px 6px 0}
+.li small{display:block;color:var(--mut)}
+.li[aria-current=true]{background:var(--tag);border-color:var(--pri)}
+.tag{display:inline-block;background:var(--tag);color:var(--tagt);border-radius:4px;padding:1px 8px;font-size:13px;margin:0 4px 4px 0}
+.st{display:inline-block;border-radius:4px;padding:1px 8px;font-size:13px;font-weight:600}
+.st.on{background:var(--okbg);color:var(--ok)}.st.off{background:var(--warnbg);color:var(--warn)}
+.b{font:inherit;font-weight:600;border-radius:6px;padding:8px 14px;cursor:pointer;border:1px solid var(--pri);background:var(--pri);color:var(--prit)}
+.b.o{background:none;color:var(--pri)}
+.it{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line)}
+.it.hid{opacity:.45}
+.it input{margin-top:5px;width:16px;height:16px;flex:none}
+.it b{font-weight:600}.m{color:var(--mut);font-size:14px}
+.nv{background:var(--warnbg);color:var(--warn);border-radius:6px;padding:10px 12px;font-size:14px}
+.sc{font-size:22px;font-weight:700;color:var(--pri)}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-top:4px}.bar i{display:block;height:100%;background:var(--pri)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.st4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}
+@media(max-width:720px){.st4{grid-template-columns:1fr 1fr}}
+.st4 .c{margin:0}.st4 strong{display:block;font-size:26px;color:var(--pri)}
+select{font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink)}
+#t{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:6px;opacity:0;transition:opacity .2s;pointer-events:none}
+#t.s{opacity:1}
+@media(prefers-reduced-motion:reduce){#t{transition:none}}
+nav{overflow-x:auto}nav button{white-space:nowrap}
+textarea{width:100%;font:inherit;padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink)}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:8px;border-top:1px solid var(--line);vertical-align:top;font-size:14px}th{color:var(--mut);font-weight:600;border-top:0}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}@media(max-width:720px){.g2{grid-template-columns:1fr}}
+.f label{display:block;margin-bottom:10px;color:var(--mut);font-size:14px}
+input[type=text],input[type=email],input[type=password]{display:block;width:100%;font:inherit;padding:8px;margin-top:4px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="w">
+<h1>UEM CONECTA+ TALENTOS</h1>
+<p class="sub">Demonstração com dados fictícios. O perfil de cada estudante é montado automaticamente com dados acadêmicos do SIGAA. O estudante só decide se quer publicá-lo.</p>
+<nav role="tablist">
+<button role="tab" data-t="c" aria-selected="true">Empresa</button>
+<button role="tab" data-t="e" aria-selected="false">Estudante/Egresso</button>
+<button role="tab" data-t="p" aria-selected="false">Painel</button>
+<button role="tab" data-t="d" aria-selected="false">Dados do SIGAA</button>
+</nav>
+<main id="v"></main>
+</div>
+<div id="t" role="status"></div>
+<script>
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const I=(t,ti,a,o,area,k)=>({t,ti,a,o,area,k,h:false});
+const S=[
+{id:1,n:'Lucas Ferreira',c:'Ciência da Computação',p:'7º período',d:'Disponível',pub:true,it:[I('IC','Detecção de anomalias em séries temporais',2025,'Prof. Carlos Souza','Dados',['Python','Machine Learning','Séries temporais']),I('TCC','Sistema de recomendação para cooperativas agrícolas',2026,'Prof. Carlos Souza','Agronegócio',['Python','SQL'])]},
+{id:2,n:'Ana Costa',c:'Estatística',p:'6º período',d:'Disponível',pub:true,it:[I('IC','Modelos preditivos para doenças crônicas',2025,'Profa. Maria Lima','Saúde',['R','Python','Bioestatística']),I('Estágio','Análise de dados em cooperativa agrícola',2026,'','Agronegócio',['Power BI','SQL','Excel'])]},
+{id:3,n:'Pedro Alves',c:'Agronomia',p:'8º período',d:'A partir de jul/26',pub:false,it:[I('TCC','Irrigação inteligente com sensores IoT',2026,'Prof. Marcos Pires','Agronegócio',['IoT','Sensores','QGIS'])]},
+{id:4,n:'Mariana Santos',c:'Informática',p:'6º período',d:'Disponível',pub:true,it:[I('TCC','Plataforma web de gestão para pequenas empresas',2026,'Profa. Sandra Rocha','Tecnologia',['React','Node.js','SQL']),I('Estágio','Desenvolvimento front-end em startup de logística',2025,'','Tecnologia',['JavaScript','React'])]},
+{id:5,n:'Rafael Oliveira',c:'Engenharia de Produção',p:'7º período',d:'Disponível',pub:false,it:[I('Estágio','Melhoria de processos em indústria têxtil',2025,'','Indústria',['Lean','Power BI','Excel'])]},
+{id:6,n:'Thiago Lima',c:'Ciência da Computação',p:'8º período',d:'Disponível',pub:true,it:[I('Extensão','App de triagem de sintomas para UBS',2025,'Prof. Fábio Nunes','Saúde',['Python','Django','PostgreSQL']),I('TCC','Microsserviços para sistemas de saúde pública',2026,'Prof. Fábio Nunes','Saúde',['Docker','PostgreSQL'])]},
+{id:7,n:'Beatriz Ferreira',c:'Medicina',p:'6º período',d:'Somente estágio obrigatório',pub:true,it:[I('IC','Prevalência de hipertensão em adultos jovens de Maringá',2025,'Profa. Renata Vieira','Saúde',['Epidemiologia','SPSS','Bioestatística'])]},
+{id:8,n:'Gabriel Costa',c:'Agronomia',p:'7º período',d:'Disponível',pub:true,it:[I('TCC','Monitoramento de solo com sensores IoT de baixo custo',2026,'Prof. Marcos Pires','Agronegócio',['IoT','Arduino','Python'])]},
+{id:9,n:'Larissa Mendes',c:'Estatística',p:'7º período',d:'Disponível',pub:false,it:[I('TCC','Modelos de sobrevivência com dados oncológicos',2026,'Profa. Fernanda Costa','Saúde',['R','Bioestatística','Machine Learning'])]},
+{id:10,n:'Diego Souza',c:'Ciência da Computação',p:'8º período',d:'Disponível',pub:true,it:[I('TCC','Deep learning para detecção de doenças em plantas',2026,'Prof. Roberto Silva','Agronegócio',['Python','TensorFlow','Machine Learning']),I('IC','Classificação de cultivares de soja com redes neurais',2025,'Prof. Roberto Silva','Agronegócio',['Python','Visão computacional'])]}
+];
+const RQ=(id,o,txt,sk,ss)=>{const s=S.find(x=>x.id===id);(s.rq=s.rq||[]).push({o,st:'recebida',projs:s.it.filter(i=>i.o===o).map(i=>i.t+': '+i.ti),txt,sk,ss,sf:[]})};
+RQ(1,'Prof. Carlos Souza','Lucas mostrou rigor metodológico e domínio de Python e aprendizado de máquina ao longo da orientação. Propôs soluções próprias para dados agrícolas e trabalha com autonomia.',['Python','Machine Learning'],['Autonomia','Rigor']);
+RQ(8,'Prof. Marcos Pires','Gabriel construiu do zero um sistema IoT funcional, com hardware e software próprios, e o adaptou à realidade de pequenos produtores rurais.',['IoT','Arduino','Python'],['Criatividade','Proatividade']);
+RQ(10,'Prof. Roberto Silva','Diego aplicou redes convolucionais a imagens de plantas com resultados publicáveis. Aprende rápido, trabalha com autonomia e tem rigor técnico.',['Python','TensorFlow','Machine Learning'],['Autonomia','Rigor']);
+S.find(x=>x.id===6).rq=[{o:'Prof. Fábio Nunes',st:'aguardando'}];
+S.push({id:11,n:'Renata Barbosa',c:'Mestrado em Ciência da Computação',p:'2º ano',d:'Disponível',pub:true,nv:'Mestrado',it:[I('Dissertação','Detecção de fraudes em transações com grafos',2026,'Prof. Carlos Souza','Tecnologia',['Python','Grafos','Machine Learning']),I('IC','Classificação de textos jurídicos',2024,'Prof. Carlos Souza','Tecnologia',['NLP','Python'])]},
+{id:12,n:'Marcelo Tavares',c:'Doutorado em Agronomia',p:'3º ano',d:'Disponível',pub:true,nv:'Doutorado',it:[I('Tese','Manejo de solo com sensoriamento remoto e aprendizado de máquina',2026,'Profa. Helena Souza','Agronegócio',['Sensoriamento remoto','Machine Learning','R'])]},
+{id:13,n:'Camila Nunes',c:'Mestrado em Engenharia de Produção',p:'2º ano',d:'A partir de jul/26',pub:true,nv:'Mestrado',it:[I('Dissertação','Simulação de processos logísticos em cooperativas',2026,'Prof. André Campos','Indústria',['Simulação','Lean','Power BI'])]});
+const D={1:[['Algoritmos e Estruturas de Dados','Banco de Dados','Estatística Aplicada','Aprendizado de Máquina','Engenharia de Software'],['Sistemas Distribuídos']],
+2:[['Probabilidade','Inferência Estatística','Modelos Lineares','Análise Multivariada','Estatística Computacional'],['Séries Temporais']],
+3:[['Fitotecnia','Fisiologia Vegetal','Irrigação e Drenagem','Geoprocessamento','Sensoriamento Remoto'],['Extensão Rural']],
+4:[['Programação Web','Engenharia de Requisitos','Banco de Dados','Gestão de Projetos de TI','Interação Humano-Computador'],['Segurança da Informação']],
+5:[['Pesquisa Operacional','Gestão da Qualidade','Planejamento e Controle da Produção','Engenharia do Trabalho','Custos Industriais'],[]],
+6:[['Programação Orientada a Objetos','Redes de Computadores','Banco de Dados','Engenharia de Software','Computação em Nuvem'],['Inteligência Artificial']],
+7:[['Anatomia','Fisiologia','Bioestatística','Epidemiologia','Saúde Coletiva'],['Clínica Médica I']],
+8:[['Fitotecnia','Solos','Climatologia Agrícola','Eletrônica Aplicada à Agricultura','Estatística Experimental'],['Agricultura de Precisão']],
+9:[['Probabilidade','Análise de Sobrevivência','Bioestatística','Modelos Lineares Generalizados','Aprendizado Estatístico'],['Estatística Bayesiana']],
+10:[['Cálculo Numérico','Álgebra Linear','Aprendizado de Máquina','Visão Computacional','Redes Neurais'],['Tópicos em Deep Learning']]};
+D[11]=[['Aprendizado de Máquina Avançado','Teoria dos Grafos','Metodologia Científica','Mineração de Dados'],['Seminários de Pesquisa']];
+D[12]=[['Estatística Espacial','Geoestatística','Sensoriamento Remoto Avançado','Metodologia Científica'],['Seminário de Tese']];
+D[13]=[['Pesquisa Operacional Avançada','Simulação de Sistemas','Logística','Metodologia Científica'],['Seminários de Pesquisa']];
+S.forEach(s=>{s.dc=D[s.id][0];s.dq=D[s.id][1];s.tp='Estudante'});
+S.find(x=>x.id===1).p='8º período';S.find(x=>x.id===5).tp='Egresso';S.find(x=>x.id===5).pub=true;S.find(x=>x.id===5).p='Formado em 2026';
+S.find(x=>x.id===1).acct={email:'lucas.ferreira@email.com',pw:'demo1234'};
+S.forEach(s=>s.nv=s.nv||'Graduação');
+[2,4,7].forEach(i=>S.find(x=>x.id===i).pub=false);
+[[5,'rafael.oliveira'],[6,'thiago.lima'],[8,'gabriel.costa'],[10,'diego.souza'],[11,'renata.barbosa'],[12,'marcelo.tavares'],[13,'camila.nunes']].forEach(([i,e])=>S.find(x=>x.id===i).acct={email:e+'@email.com',pw:'demo1234'});
+S.find(x=>x.id===2).it.push(I('Extensão','Oficinas de estatística para professores da rede pública',2025,'Prof. Paulo Mendes','Educação',['Comunicação de dados','Estatística básica']));
+S.find(x=>x.id===4).it.push(I('IC','Usabilidade de sistemas de gestão para pequenas empresas',2025,'Prof. Eduardo Lima','Tecnologia',['Usabilidade','JavaScript']));
+S.find(x=>x.id===7).it.push(I('Extensão','Programa de saúde preventiva em comunidades periféricas',2025,'Profa. Clara Dias','Saúde',['Saúde pública','Comunicação']));
+const C=[
+{id:1,n:'Alfa Dados Tecnologia',t:'Vaga júnior',sk:['Python','Machine Learning','SQL'],a:'Agronegócio'},
+{id:2,n:'Saúde+ Hospital',t:'Pesquisa aplicada',sk:['R','Bioestatística','Epidemiologia','SPSS'],a:'Saúde'},
+{id:3,n:'TechFarm Agro',t:'TCC orientado pela empresa',sk:['IoT','Python','Arduino'],a:'Agronegócio'},
+{id:4,n:'Agro Norte Cooperativa',t:'Vaga de estágio',sk:['SQL','Power BI','Excel'],a:'Agronegócio'}
+];
+let tab='c',cs=null,cc=1;const req=new Set();
+const vis=s=>s.it.filter(i=>!i.h);
+const skills=s=>[...new Set(vis(s).flatMap(i=>i.k))];
+function toast(m){const e=document.getElementById('t');e.textContent=m;e.className='s';setTimeout(()=>e.className='',2600)}
+function score(s,c){
+  const sk=skills(s).map(x=>x.toLowerCase()),hit=c.sk.filter(x=>sk.includes(x.toLowerCase()));
+  if(!hit.length)return null;
+  const ar=vis(s).some(i=>i.area===c.a);
+  const cf=0;
+  return{pts:Math.round(hit.length/c.sk.length*60+(ar?25:0)+cf/c.sk.length*15),hit,ar,cf};
+}
+function vE(){return cs!==null?vApp():ph==='first'?vFirst():vLogin()}
+let fs=null,ph='login',stp=0,sub='p',tmpMail='';
+function vLogin(){
+  const opts=S.filter(s=>!s.acct).map(s=>`<option value="${s.id}">${esc(oriMail(s.n))}</option>`).join('');
+  return`<div class="g2"><div class="c"><h2>Primeiro acesso</h2><p class="m" style="margin-bottom:10px">Entre uma única vez com seu e-mail da UEM (login institucional, simulado). Depois você passa a usar um e-mail pessoal.</p>
+  ${opts?`<label class="m">E-mail da UEM<br><select id="uem">${opts}</select></label><br><button class="b" style="margin-top:10px" onclick="fs=+document.getElementById('uem').value;ph='first';stp=0;r()">Entrar com e-mail da UEM</button>`:'<p class="m">Todos os perfis de demonstração já têm conta.</p>'}</div>
+  <div class="c"><h2>Já tenho conta</h2><div class="f"><label>E-mail pessoal<input id="le" type="email" autocomplete="off"></label><label>Senha<input id="lp" type="password"></label></div><button class="b" onclick="login()">Entrar</button>
+  <p class="m" style="margin-top:10px">Demo: lucas.ferreira@email.com / demo1234</p></div></div>`;
+}
+function vFirst(){
+  const s=S.find(x=>x.id===fs);let body;
+  if(stp===0)body=`<p class="m" style="margin-bottom:10px">O e-mail da UEM deixa de existir depois da formatura. Por isso sua conta passará a usar um e-mail pessoal.</p><div class="f"><label>E-mail pessoal<input id="pm" type="email" placeholder="voce@email.com"></label></div><button class="b" onclick="sendCode()">Enviar código</button>`;
+  else if(stp===1)body=`<p class="m" style="margin-bottom:10px">Enviamos um código para ${esc(tmpMail)}. (Demo: 123456)</p><div class="f"><label>Código<input id="pc" type="text" inputmode="numeric" maxlength="6"></label></div><button class="b" onclick="chkCode()">Confirmar e-mail</button>`;
+  else body=`<p class="m" style="margin-bottom:10px">Crie uma senha com pelo menos 8 caracteres.</p><div class="f"><label>Nova senha<input id="p1" type="password"></label><label>Repita a senha<input id="p2" type="password"></label></div><button class="b" onclick="setPw()">Concluir e entrar</button>`;
+  return`<div class="c" style="max-width:520px"><p class="m">Primeiro acesso · passo ${stp+1} de 3</p><h2>Olá, ${esc(s.n)}</h2><p class="m" style="margin-bottom:12px">Login da UEM: ${esc(oriMail(s.n))}</p>${body} <button class="b o" onclick="ph='login';r()">Cancelar</button></div>`;
+}
+function sendCode(){const v=document.getElementById('pm').value.trim().toLowerCase();
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)||/@([a-z0-9.-]+\.)?uem\.br$/.test(v)){toast('Informe um e-mail pessoal válido, que não seja da UEM');return}
+  if(S.some(s=>s.acct&&s.acct.email===v)){toast('Este e-mail já está em uso');return}
+  tmpMail=v;stp=1;r()}
+function chkCode(){if(document.getElementById('pc').value.trim()!=='123456'){toast('Código incorreto');return}stp=2;r()}
+function setPw(){const a=document.getElementById('p1').value,b=document.getElementById('p2').value;
+  if(a.length<8){toast('A senha precisa ter ao menos 8 caracteres');return}
+  if(a!==b){toast('As senhas não conferem');return}
+  S.find(x=>x.id===fs).acct={email:tmpMail,pw:a};cs=fs;ph='app';sub='p';toast('Conta criada. Seu perfil já está pronto.');r()}
+function login(){const e=document.getElementById('le').value.trim().toLowerCase(),p=document.getElementById('lp').value;
+  const s=S.find(x=>x.acct&&x.acct.email===e&&x.acct.pw===p);
+  if(!s){toast('E-mail ou senha incorretos');return}cs=s.id;ph='app';sub='p';r()}
+function out(){cs=null;ph='login';r()}
+function chPw(){const a=document.getElementById('p1').value,b=document.getElementById('p2').value;
+  if(a.length<8){toast('A senha precisa ter ao menos 8 caracteres');return}
+  if(a!==b){toast('As senhas não conferem');return}
+  S.find(x=>x.id===cs).acct.pw=a;toast('Senha alterada');r()}
+function okPub(){if(!document.getElementById('ok').checked){toast('Marque a autorização para publicar');return}
+  const s=S.find(x=>x.id===cs);s.pub=true;s.cf=false;toast('Perfil publicado');r()}
+function unpub(){S.find(x=>x.id===cs).pub=false;toast('Perfil despublicado');r()}
+function vApp(){
+  const s=S.find(x=>x.id===cs);
+  return`<div class="row" style="margin-bottom:12px"><div><h2 style="margin:0;font-size:18px">${esc(s.n)}</h2><span class="m">${esc(s.tp)} · ${esc(s.c)} · ${esc(s.p)}</span></div><div><button class="b ${sub==='p'?'':'o'}" onclick="sub='p';r()">Meu perfil</button> <button class="b ${sub==='e'?'':'o'}" onclick="sub='e';r()">Empresas e vagas</button> <button class="b ${sub==='i'?'':'o'}" onclick="sub='i';r()">Convites${(n=>n?' ('+n+')':'')(INV.filter(i=>i.sid===s.id&&i.orig!=='aluno'&&i.st==='pendente').length)}</button> <button class="b ${sub==='a'?'':'o'}" onclick="sub='a';r()">Minha conta</button> <button class="b o" onclick="out()">Sair</button></div></div>`+(sub==='a'?vAcc(s):sub==='i'?vInv(s):sub==='e'?vVit(s):vProf(s));
+}
+function vAcc(s){return`<div class="c" style="max-width:520px"><h2>Minha conta</h2><p class="m">E-mail pessoal de acesso: <b>${esc(s.acct.email)}</b></p><p class="m" style="margin:10px 0">Seu perfil vem do SIGAA, mas a conta é independente do e-mail da UEM e continua funcionando depois da formatura.</p><div class="f"><label>Nova senha<input id="p1" type="password"></label><label>Repita a senha<input id="p2" type="password"></label></div><button class="b" onclick="chPw()">Alterar senha</button></div>`}
+function vProf(s){
+  const items=s.it.map(i=>`<div class="it"><span><b>${esc(i.t)}: ${esc(i.ti)}</b><br><span class="m">${i.a}${i.o?' · orientação de '+esc(i.o):''} · ${esc(i.area)}</span><br>${i.k.map(x=>`<span class="tag">${esc(x)}</span>`).join('')}</span></div>`).join('');
+  const tg=(a,x='')=>a.map(y=>`<span class="tag">${esc(y)}${x}</span>`).join('');
+  const act=s.pub?`<p class="m" style="margin:10px 0">Seu perfil está visível para empresas cadastradas e aprovadas.</p><button class="b o" onclick="unpub()">Despublicar meu perfil</button>`
+   :s.cf?`<div class="nv" style="margin:10px 0;background:var(--tag);color:var(--ink)"><b>Antes de publicar</b><br>O perfil abaixo ficará visível para empresas cadastradas e aprovadas pelo NIP, e não aparece em buscadores. Notas, documentos, foto, endereço e contatos pessoais não são publicados. Você pode despublicar quando quiser.<label style="display:block;margin-top:8px"><input type="checkbox" id="ok"> Li e autorizo a publicação</label></div><button class="b" onclick="okPub()">Confirmar publicação</button> <button class="b o" onclick="S.find(x=>x.id===cs).cf=false;r()">Cancelar</button>`
+   :`<p class="m" style="margin:10px 0">Ao publicar, todo o seu perfil acadêmico fica visível para as empresas.</p><button class="b" onclick="S.find(x=>x.id===cs).cf=true;r()">Publicar meu perfil</button>`;
+  return`<div class="c"><div class="row"><div><h2 style="margin:0">Seu perfil já está pronto</h2><span class="m">Gerado automaticamente com dados do SIGAA. Nada precisa ser preenchido.</span></div><span class="st ${s.pub?'on':'off'}">${s.pub?'Publicado':'Não publicado'}</span></div>${act}</div>
+  <div class="c"><h2>${s.pub?'Perfil público':'Pré-visualização do perfil'}</h2>
+  <p class="m">${esc(s.n)} · ${esc(s.tp)} · ${esc(s.c)} · ${esc(s.p)}</p>
+  <label class="m" style="display:block;margin:8px 0">Disponibilidade <select onchange="S.find(x=>x.id===cs).d=this.value;toast('Disponibilidade salva')">${['Disponível','A partir de jul/26','Somente estágio obrigatório'].map(o=>`<option ${o===s.d?'selected':''}>${o}</option>`).join('')}</select></label>
+  <h2 style="margin-top:12px">Competências identificadas</h2>${tg(skills(s))}
+  <h2 style="margin-top:12px">Formação prática</h2>${items}
+  <h2 style="margin-top:12px">Disciplinas cursadas</h2><p class="m" style="margin-bottom:6px">Apenas os nomes das disciplinas aprovadas, sem notas.</p>${tg(s.dc)}${tg(s.dq,' (em andamento)')}</div>
+  ${recBox(s)}<div class="nv"><b>Nunca é publicado:</b> notas, faltas, reprovações, CPF, RG e outros documentos, foto, endereço e contatos pessoais. Empresas só pedem contato pela plataforma.</div>`;
+}
+const CO=[{id:1,rs:'Alfa Dados Tecnologia Ltda',nf:'Alfa Dados Tecnologia',cnpj:'11.222.333/0001-81',setor:'Tecnologia',porte:'Pequena',cid:'Maringá',uf:'PR',site:'alfadados.com.br',txt:'Software e análise de dados para o agronegócio.',resp:'Marina Duarte',cargo:'Gestora de RH',mail:'rh@alfadados.com.br',pw:'demo1234',tipos:['Estágio','Emprego'],conv:'Sim',st:'aprovada'}];
+const INV=[{id:1,cid:1,sid:1,msg:'Olá! Seu perfil em dados e aprendizado de máquina combina com nossa vaga de analista júnior. Podemos conversar?',vaga:'Analista de dados júnior',st:'pendente'}];
+CO.push({id:2,rs:'TechFarm Agro Ltda',nf:'TechFarm Agro',cnpj:'',setor:'Agronegócio',porte:'Pequena',cid:'Maringá',uf:'PR',site:'',txt:'Sensores e automação para pequenas propriedades rurais.',resp:'Paulo Reis',cargo:'Sócio',mail:'paulo@techfarm.com.br',pw:'demo1234',tipos:['Estágio'],conv:'Sim',st:'aprovada'},
+{id:3,rs:'Saúde+ Hospital Ltda',nf:'Saúde+ Hospital',cnpj:'',setor:'Saúde',porte:'Grande',cid:'Umuarama',uf:'PR',site:'',txt:'Hospital regional com núcleo de pesquisa aplicada.',resp:'Clara Nogueira',cargo:'Coordenadora de pesquisa',mail:'pesquisa@saudemais.com.br',pw:'demo1234',tipos:['Pesquisa aplicada'],conv:'Em andamento',st:'aprovada'},
+{id:4,rs:'Agro Norte Cooperativa',nf:'Agro Norte Cooperativa',cnpj:'',setor:'Agronegócio',porte:'Grande',cid:'Cianorte',uf:'PR',site:'',txt:'Cooperativa agroindustrial do noroeste do Paraná.',resp:'Sérgio Lima',cargo:'Analista de RH',mail:'rh@agronorte.coop.br',pw:'demo1234',tipos:['Estágio','Emprego'],conv:'Sim',st:'aprovada'});
+const NAT=['Estágio','Trainee','Emprego','Pesquisa aplicada','Outro'],GR={'Comunicação':['Comunicação','Escrita clara','Apresentação oral','Escuta ativa','Persuasão','Comunicação com públicos não técnicos'],'Liderança e gestão':['Liderança','Gestão do tempo','Delegação','Tomada de decisão','Gestão de conflitos','Planejamento'],'Raciocínio e resolução':['Resolução de problemas','Pensamento crítico','Pensamento analítico','Criatividade','Curiosidade','Visão sistêmica','Aprendizado rápido'],'Organização e execução':['Organização','Atenção aos detalhes','Disciplina','Cumprimento de prazos','Foco em resultados','Responsabilidade'],'Relacionamento':['Trabalho em equipe','Colaboração','Empatia','Respeito à diversidade','Networking','Atendimento a pessoas'],'Adaptação e postura':['Autonomia','Proatividade','Adaptabilidade','Resiliência','Iniciativa','Ética','Rigor','Comprometimento','Receptividade a feedback']};
+const SOFT=Object.values(GR).flat(),PK={v:{max:6,free:2,sel:new Set(),fr:[]},o:{max:8,free:2,sel:new Set(),fr:[]}};
+const VG=[{id:1,cid:1,titulo:'Analista de dados júnior',nat:'Emprego',tec:['Python','Machine Learning','SQL'],comp:['Autonomia','Proatividade'],cursos:['Graduação: Ciência da Computação','Graduação: Estatística','Mestrado: Ciência da Computação'],valor:4200,ch:40,ben:'Vale-refeição e plano de saúde'},
+{id:2,cid:1,titulo:'Estágio em desenvolvimento de software',nat:'Estágio',tec:['Python','SQL','React'],comp:['Proatividade'],cursos:['Graduação: Ciência da Computação','Graduação: Informática'],valor:1800,ch:30,ben:'Vale-transporte'},
+{id:3,cid:2,titulo:'Estágio em IoT para agricultura',nat:'Estágio',tec:['IoT','Python','Arduino'],comp:['Criatividade','Proatividade'],cursos:['Graduação: Agronomia','Graduação: Ciência da Computação'],valor:1600,ch:30,ben:'Vale-transporte'},
+{id:4,cid:3,titulo:'Pesquisa aplicada em bioestatística',nat:'Pesquisa aplicada',tec:['R','Bioestatística','SPSS'],comp:['Rigor','Comunicação'],cursos:['Graduação: Estatística','Graduação: Medicina'],valor:2500,ch:20,ben:'Auxílio-alimentação'},
+{id:5,cid:4,titulo:'Estágio em análise de dados',nat:'Estágio',tec:['SQL','Power BI','Excel'],comp:['Organização','Comunicação'],cursos:['Graduação: Estatística','Graduação: Ciência da Computação','Graduação: Engenharia de Produção'],valor:1500,ch:30,ben:''}];
+let pv='',vsel=null,vform=false,ef={set:'Todos',nat:'Todas',onlyc:false};
+const BL=new Set();
+const SET=['Tecnologia','Agronegócio','Saúde','Educação','Indústria','Comércio e serviços','Logística','Financeiro'],PORTE=['Microempresa ou MEI','Pequena','Média','Grande'],TIPOS=['Estágio','Trainee','Emprego','Pesquisa aplicada'];
+const KW={'Ciência da Computação':'computacao software programacao dados ti tecnologia desenvolvedor inteligencia artificial sistemas','Informática':'sistemas informacao software programacao ti tecnologia desenvolvedor web dados','Estatística':'estatistica dados analise analista pesquisa modelagem bi','Agronomia':'agronomia agro agricola agronegocio campo rural solo lavoura','Engenharia de Produção':'producao industria industrial logistica qualidade processos lean','Medicina':'medicina saude medico hospital clinica'};
+let ce=null,cm='login',csub='v',bn=null,bq='',bc=null,bo='rand',bt='Todos',bd='Todas',bp=0,bs=null,ord=[];
+const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+const mailOf=s=>s.acct?s.acct.email:oriMail(s.n);
+function okCnpj(v){v=v.replace(/\D/g,'');if(v.length!==14||/^(\d)\1+$/.test(v))return false;
+  const f=n=>{let s=0,p=n-7;for(let i=0;i<n;i++){s+=+v[i]*p--;if(p<2)p=9}const r=s%11;return r<2?0:11-r};return f(12)===+v[12]&&f(13)===+v[13]}
+const inp=(id,l,t='text',ph='')=>`<label>${l}<input id="${id}" type="${t}" placeholder="${ph}"></label>`;
+const sel=(id,l,o,oc='')=>`<label>${l}<select id="${id}" ${oc?`onchange="${oc}"`:''} style="display:block;width:100%;margin-top:4px">${o.map(x=>`<option>${x}</option>`).join('')}</select></label>`;
+function vEmp(){
+  if(ce===null)return cm==='reg'?vReg():vCoLogin();
+  const c=CO.find(x=>x.id===ce);return c.st!=='aprovada'?vPend(c):vCoApp(c);
+}
+function vCoLogin(){return`<div class="g2"><div class="c"><h2>Cadastrar empresa</h2><p class="m" style="margin-bottom:10px">O cadastro passa por validação do NIP (CNPJ e e-mail corporativo) antes de liberar a busca por talentos.</p><button class="b" onclick="cm='reg';r()">Iniciar cadastro</button></div>
+  <div class="c"><h2>Já tenho conta</h2><div class="f"><label>E-mail corporativo<input id="cle" type="email"></label><label>Senha<input id="clp" type="password"></label></div><button class="b" onclick="coLogin()">Entrar</button><p class="m" style="margin-top:10px">Demo: rh@alfadados.com.br / demo1234</p></div></div>`}
+function vReg(){return`<div class="c" style="max-width:640px"><h2>Cadastro da empresa</h2><div class="f">${inp('rs','Razão social')}${inp('nf','Nome fantasia')}${inp('cn','CNPJ','text','00.000.000/0000-00')}${sel('st','Setor',SET)}${sel('pt','Porte',PORTE)}${inp('ci','Cidade')}${inp('uf','UF')}${inp('si','Site ou LinkedIn')}<label>Sobre a empresa (texto curto)<textarea id="tx" rows="3" maxlength="300"></textarea></label>${inp('rn','Nome do responsável')}${inp('rc','Cargo')}${inp('rm','E-mail corporativo','email')}${inp('rp','Senha (mínimo 8 caracteres)','password')}<p class="m">Tipos de vaga que costuma oferecer</p><div style="margin-bottom:10px">${TIPOS.map(t=>`<label style="display:inline-block;margin-right:12px"><input type="checkbox" class="tv" value="${t}"> ${t}</label>`).join('')}</div>${sel('cv','Convênio de estágio com a UEM',['Sim','Não','Em andamento'])}</div><button class="b" onclick="coReg()">Enviar cadastro</button> <button class="b o" onclick="cm='login';r()">Cancelar</button></div>`}
+function vPend(c){return`<div class="c" style="max-width:560px"><h2>Cadastro em análise</h2><p class="m" style="margin:8px 0">Recebemos o cadastro de ${esc(c.nf)}. O NIP valida o CNPJ e o e-mail corporativo. A busca por talentos é liberada após a aprovação.</p><button class="b" onclick="CO.find(x=>x.id===ce).st='aprovada';toast('Cadastro aprovado');r()">Demo: simular aprovação do NIP</button> <button class="b o" onclick="coOut()">Sair</button></div>`}
+function coReg(){const g=i=>document.getElementById(i).value.trim();
+  const d={rs:g('rs'),nf:g('nf'),cnpj:g('cn'),setor:g('st'),porte:g('pt'),cid:g('ci'),uf:g('uf').toUpperCase(),site:g('si'),txt:g('tx'),resp:g('rn'),cargo:g('rc'),mail:g('rm').toLowerCase(),pw:g('rp'),tipos:[...document.querySelectorAll('.tv:checked')].map(x=>x.value),conv:g('cv')};
+  if(!d.rs||!d.nf||!d.cid||!d.uf||!d.resp||!d.cargo){toast('Preencha os campos obrigatórios');return}
+  if(!okCnpj(d.cnpj)){toast('CNPJ inválido');return}
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.mail)||/@(gmail|hotmail|outlook|yahoo|icloud|live|bol|uol)\./.test(d.mail)){toast('Use um e-mail corporativo');return}
+  if(d.pw.length<8){toast('A senha precisa ter ao menos 8 caracteres');return}
+  if(CO.some(x=>x.mail===d.mail||x.cnpj.replace(/\D/g,'')===d.cnpj.replace(/\D/g,''))){toast('CNPJ ou e-mail já cadastrado');return}
+  d.id=Math.max(...CO.map(x=>x.id))+1;d.st='pendente';CO.push(d);ce=d.id;toast('Cadastro enviado para validação do NIP');r()}
+function coLogin(){const e=document.getElementById('cle').value.trim().toLowerCase(),p=document.getElementById('clp').value;
+  const c=CO.find(x=>x.mail===e&&x.pw===p);if(!c){toast('E-mail ou senha incorretos');return}ce=c.id;csub='v';r()}
+function coOut(){ce=null;cm='login';bn=null;bc=null;bs=null;bq='';r()}
+function vCoApp(c){
+  const nav=`<div class="row" style="margin-bottom:12px"><div><h2 style="margin:0;font-size:18px">${esc(c.nf)}</h2><span class="m">${esc(c.setor)} · ${esc(c.cid)}/${esc(c.uf)} · Cadastro aprovado</span></div><div>${[['v','Vagas e matching'],['b','Buscar talentos'],['c','Convites enviados'],['p','Perfil da empresa']].map(([k,l])=>`<button class="b ${csub===k?'':'o'}" onclick="csub='${k}';r()">${l}</button>`).join(' ')} <button class="b o" onclick="coOut()">Sair</button></div></div>`;
+  return nav+(csub==='v'?vVagas(c):csub==='c'?vSent(c):csub==='p'?vCoProf(c):vSearch(c));
+}
+function courses(){const cs=[...new Set(S.filter(s=>s.pub&&s.nv===bn).map(s=>s.c))];const t=norm(bq).split(/[^a-z0-9]+/).filter(x=>x.length>=3);if(!t.length)return null;
+  return cs.filter(c=>{const w=(norm(c)+' '+(KW[c.replace(/^(Mestrado|Doutorado) em /,'')]||'')).split(/\s+/);return t.some(x=>w.some(y=>y.startsWith(x)||(y.length>=4&&x.startsWith(y))))})}
+function sugHtml(){const l=courses();if(l===null)return'<span class="m">Digite uma ou mais palavras-chave para ver cursos afins.</span>';
+  if(!l.length)return'<span class="m">Nenhum curso com perfis publicados para essas palavras neste nível.</span>';
+  return'<span class="m">Cursos sugeridos:</span><br>'+l.map(c=>`<button class="b ${bc===c?'':'o'}" style="margin:4px 4px 0 0" data-c="${esc(c)}" onclick="pickCourse(this.dataset.c)">${esc(c)} (${S.filter(s=>s.pub&&s.nv===bn&&s.c===c).length})</button>`).join('')}
+function sugg(){document.getElementById('sg').innerHTML=sugHtml()}
+function setNv(n){bn=n;bc=null;bs=null;bq='';r()}
+function pickCourse(c){bc=c;bs=null;bp=0;ord=S.map(s=>s.id).sort(()=>Math.random()-.5);r()}
+function vSearch(c){
+  let h=`<div class="c"><h2>1. Nível de formação</h2>${['Graduação','Mestrado','Doutorado'].map(n=>`<label style="margin-right:16px"><input type="radio" name="nv" ${bn===n?'checked':''} onchange="setNv('${n}')"> ${n}</label>`).join('')}</div>`;
+  if(bn)h+=`<div class="c"><h2>2. Palavras-chave</h2><input id="bq" type="text" value="${esc(bq)}" placeholder="Ex.: trainee computação, estágio agronomia" oninput="bq=this.value;sugg()"><div id="sg" style="margin-top:8px">${sugHtml()}</div></div>`;
+  if(bn&&bc)h+=bs?vProfCo(c):vList();
+  return h;
+}
+function vList(){
+  let l=S.filter(s=>s.pub&&s.nv===bn&&s.c===bc&&(bt==='Todos'||s.tp===bt)&&(bd==='Todas'||s.d==='Disponível'));
+  l=bo==='nome'?l.sort((a,b)=>a.n.localeCompare(b.n)):l.sort((a,b)=>ord.indexOf(a.id)-ord.indexOf(b.id));
+  const pg=4,tot=Math.max(1,Math.ceil(l.length/pg));if(bp>=tot)bp=0;
+  const op=(v,a,cur)=>a.map(x=>`<option value="${x[0]}" ${cur===x[0]?'selected':''}>${x[1]}</option>`).join('');
+  const f=`<div class="row" style="margin-bottom:10px"><label class="m">Ordem <select onchange="bo=this.value;bp=0;r()">${op(0,[['rand','Aleatória'],['nome','Nome (A a Z)']],bo)}</select></label><label class="m">Tipo <select onchange="bt=this.value;bp=0;r()">${op(0,[['Todos','Todos'],['Estudante','Estudante'],['Egresso','Egresso']],bt)}</select></label><label class="m">Disponibilidade <select onchange="bd=this.value;bp=0;r()">${op(0,[['Todas','Todas'],['Disponível','Disponível']],bd)}</select></label></div>`;
+  const cards=l.slice(bp*pg,bp*pg+pg).map(s=>`<button class="li" style="border:1px solid var(--line);border-left-width:3px;border-radius:6px;margin-bottom:8px" onclick="bs=${s.id};r()"><b>${esc(s.n)}</b> <span class="m">${esc(s.tp)} · ${esc(s.p)} · ${esc(s.d)}</span><small>${skills(s).slice(0,4).map(esc).join(' · ')}</small></button>`).join('')||'<p class="m">Nenhum perfil com esses filtros.</p>';
+  return`<div class="c"><h2>3. Perfis de ${esc(bc)}</h2>${f}${cards}<div class="row"><span class="m">${l.length} perfil(is) · página ${bp+1} de ${tot}</span><span><button class="b o" ${bp?'':'disabled'} onclick="bp--;r()">Anterior</button> <button class="b o" ${bp+1<tot?'':'disabled'} onclick="bp++;r()">Próxima</button></span></div></div>`}
+function vProfCo(c){const s=S.find(x=>x.id===bs),iv=INV.find(i=>i.cid===c.id&&i.sid===s.id&&i.orig!=='aluno');
+  const tg=a=>a.map(y=>`<span class="tag">${esc(y)}</span>`).join('');
+  const items=s.it.map(i=>`<div class="it"><span><b>${esc(i.t)}: ${esc(i.ti)}</b><br><span class="m">${i.a}${i.o?' · orientação de '+esc(i.o):''} · ${esc(i.area)}</span></span></div>`).join('');
+  const act=iv?(iv.st==='aceito'?`<span class="st on">Match aceito</span><p class="m" style="margin-top:6px">Contato direto: ${esc(mailOf(s))}</p>`:`<span class="st off">${iv.st==='pendente'?'Convite pendente':'Convite recusado'}</span>`)
+   :`<div class="f"><label>Mensagem com a intenção do contato (obrigatória)<textarea id="im" rows="3" maxlength="300"></textarea></label><label>Vaga relacionada (opcional)<input id="iv" type="text" value="${esc(pv)}"></label></div><button class="b" onclick="sendInv(${s.id})">Convite de contato</button> <span class="m">Convites hoje: ${INV.filter(i=>i.cid===c.id&&i.orig!=='aluno').length} de 5</span>`;
+  return`<div class="c"><button class="b o" onclick="bs=null;r()">Voltar à lista</button><h2 style="margin-top:12px">${esc(s.n)}</h2><p class="m">${esc(s.tp)} · ${esc(s.c)} · ${esc(s.p)} · ${esc(s.d)}</p><h2 style="margin-top:12px">Competências</h2>${tg(skills(s))}<h2 style="margin-top:12px">Formação prática</h2>${items}<h2 style="margin-top:12px">Disciplinas cursadas</h2>${tg(s.dc)}${recs(s).length?`<h2 style="margin-top:12px">Recomendações de orientadores</h2>${recs(s).map(q=>`<p>“${esc(q.txt)}”</p><p class="m" style="margin-bottom:8px">${esc(q.o)}${q.projs&&q.projs.length?' · '+q.projs.map(esc).join('; '):''}</p>`).join('')}`:''}</div><div class="c">${act}</div>`}
+function sendInv(sid){const m=document.getElementById('im').value.trim(),v=document.getElementById('iv').value.trim();
+  if(m.length<20){toast('Escreva a intenção do contato (mínimo 20 caracteres)');return}
+  if(INV.filter(i=>i.cid===ce&&i.orig!=='aluno').length>=5){toast('Limite diário de 5 convites atingido');return}
+  if(BL.has(ce+'-'+sid)){toast('Não foi possível enviar o convite');return}
+  INV.push({id:INV.length+1,cid:ce,sid,msg:m,vaga:v,st:'pendente'});pv='';toast('Convite enviado por e-mail e na área do estudante');r()}
+function vSent(c){const l=INV.filter(i=>i.cid===c.id&&i.orig!=='aluno');
+  return`<div class="c"><h2>Convites enviados (${l.length} de 5 hoje)</h2>${l.map(i=>{const s=S.find(x=>x.id===i.sid);return`<div class="it"><span><b>${esc(s.n)}</b> <span class="m">${esc(s.c)}</span><br>${i.vaga?`<span class="m">Vaga: ${esc(i.vaga)}</span><br>`:''}“${esc(i.msg)}”<br><span class="m">E-mail enviado para ${esc(mailOf(s))} e mensagem na área do estudante.</span><br>${i.st==='aceito'?`<span class="st on">Match aceito</span> <span class="m">Contato direto: ${esc(mailOf(s))}. Depois de algumas semanas, perguntaremos aos dois lados se houve entrevista ou contratação.</span>`:`<span class="st off">${i.st==='pendente'?'Aguardando resposta':'Recusado'}</span>`}</span></div>`}).join('')||'<p class="m">Nenhum convite enviado.</p>'}</div>`}
+function vCoProf(c){const rw=(l,v)=>v?`<p><span class="m">${l}:</span> ${esc(v)}</p>`:'';
+  return`<div class="c" style="max-width:640px"><h2>Perfil da empresa</h2>${rw('Razão social',c.rs)}${rw('Nome fantasia',c.nf)}${rw('CNPJ',c.cnpj)}${rw('Setor',c.setor)}${rw('Porte',c.porte)}${rw('Cidade',c.cid+'/'+c.uf)}${rw('Site ou LinkedIn',c.site)}${rw('Sobre',c.txt)}${rw('Responsável',c.resp+', '+c.cargo)}${rw('E-mail corporativo',c.mail)}${rw('Tipos de vaga',c.tipos.join(', '))}${rw('Convênio de estágio com a UEM',c.conv)}</div>`}
+function vInv(s){const l=INV.filter(i=>i.sid===s.id&&i.orig!=='aluno');
+  return`<div class="c"><h2>Convites de contato</h2>${l.map(i=>{const c=CO.find(x=>x.id===i.cid);return`<div class="it"><span><b>${esc(c.nf)}</b> <span class="m">${esc(c.setor)} · ${esc(c.cid)}/${esc(c.uf)}</span><br>${i.vaga?`<span class="m">Vaga: ${esc(i.vaga)}</span><br>`:''}“${esc(i.msg)}”<br>${i.st==='pendente'?`<div style="margin-top:8px"><button class="b" onclick="ans(${i.id},'aceito')">Aceitar</button> <button class="b o" onclick="ans(${i.id},'recusado')">Recusar</button> <button class="b o" onclick="ans(${i.id},'recusado',1)">Recusar e bloquear</button> <button class="b o" onclick="ans(${i.id},'recusado',2)">Denunciar</button></div>`:i.st==='aceito'?`<span class="st on">Match aceito</span> <span class="m">Contato direto com ${esc(c.resp)}, ${esc(c.cargo)}: ${esc(c.mail)}</span>`:`<span class="st off">Recusado</span>`}</span></div>`}).join('')||'<p class="m">Você ainda não recebeu convites. Cada convite também chega por e-mail.</p>'}</div><div class="nv">Sua resposta é sempre livre. Enquanto você não aceitar, a empresa não recebe seus contatos pessoais.</div>`}
+function ans(id,st,k){const i=INV.find(x=>x.id===id);i.st=st;if(k)BL.add(i.cid+'-'+i.sid);toast(st==='aceito'?'Match aceito! Contato direto liberado':k===2?'Denúncia enviada ao NIP e empresa bloqueada':k===1?'Empresa bloqueada':'Convite recusado');r()}
+function elig(s,v){
+  if(s.d==='Somente estágio obrigatório'&&v.nat!=='Estágio')return false;
+  if(v.nat==='Estágio')return s.tp==='Estudante'&&s.nv==='Graduação';
+  if(v.nat==='Pesquisa aplicada')return true;
+  return s.tp==='Egresso'||/^8º/.test(s.p)||s.nv!=='Graduação';
+}
+function matchV(s,v){
+  if(!elig(s,v))return null;
+  const sk=skills(s).map(norm),dn=s.dc.concat(s.dq).map(norm),tec=[],dis=[];
+  v.tec.forEach(t=>{const n=norm(t);if(sk.includes(n))tec.push(t);else if(dn.some(d=>d.includes(n)))dis.push(t)});
+  if(!tec.length&&!dis.length)return null;
+  const cur=!!v.qc||v.cursos.includes(s.nv+': '+s.c.replace(/^(Mestrado|Doutorado) em /,''));
+  let got=(tec.length+dis.length*.6)/v.tec.length*50+(cur?10:0),pos=60;
+  const rs=recs(s),lab=q=>[...(q.ss||[]),...(q.sf||[])].map(norm),pool=rs.flatMap(lab),conf=v.comp.filter(x=>pool.includes(norm(x))),cn={};
+  conf.forEach(x=>cn[x]=rs.filter(q=>lab(q).includes(norm(x))).length);
+  const ev=conf.length>0;
+  if(ev){pos+=40;got+=conf.length/v.comp.length*40}
+  return{pts:Math.round(got/pos*100),tec,dis,cur,conf,cn,ev};
+}
+const tgs=a=>a.map(y=>`<span class="tag">${esc(y)}</span>`).join('');
+function why(m,v){return[m.tec.length?`Competências técnicas: ${tgs(m.tec)}`:'',m.dis.length?`Pelas disciplinas cursadas: ${tgs(m.dis)}`:'',m.cur?(v.qc?'Vaga aceita qualquer curso':'Curso indicado na vaga'):'Curso fora das áreas da vaga (vale só 10 pontos)',m.ev?`Confirmado por orientador: ${tgs(m.conf.map(x=>x+(m.cn[x]>1?' ('+m.cn[x]+' orientadores)':'')))}`:(v.comp.length?'Competências comportamentais: não avaliado (sem recomendação ou sem confirmação dos itens pedidos)':'')].filter(Boolean).map(x=>`<div class="m">${x}</div>`).join('')}
+const money=v=>'R$ '+v.valor.toLocaleString('pt-BR')+' · '+v.ch+'h semanais'+(v.ben?' · '+esc(v.ben):'');
+const CGRAD=['Administração','Administração Pública','Agronomia','Arquitetura e Urbanismo','Artes Cênicas','Artes Visuais','Biomedicina','Bioquímica','Biotecnologia','Ciência da Computação','Ciências (Licenciatura)','Ciências Biológicas','Ciências Contábeis','Ciências Econômicas','Ciências Sociais','Comunicação e Multimeios','Design','Direito','Educação Física','Enfermagem','Engenharia Agrícola','Engenharia Ambiental','Engenharia Civil','Engenharia da Computação','Engenharia de Alimentos','Engenharia de Produção','Engenharia de Software','Engenharia Elétrica','Engenharia Mecânica','Engenharia Química','Engenharia Têxtil','Estatística','Farmácia','Filosofia','Física','Geografia','História','Informática','Letras','Matemática','Medicina','Medicina Veterinária','Moda','Música','Odontologia','Pedagogia','Psicologia','Química','Serviço Social','Tecnologia em Alimentos','Tecnologia em Construção Civil','Tecnologia em Gastronomia','Tecnologia em Meio Ambiente','Zootecnia'];
+const PD=['Agronomia','Ciência de Alimentos','Genética e Melhoramento','Zootecnia','Biologia Comparada','Bioquímica','Biotecnologia Ambiental','Ciências Biológicas - Biologia Celular','Ciências Fisiológicas','Ecologia de Ambientes Aquáticos Continentais','Bioestatística','Educação para a Ciência e a Matemática','Física','Matemática','Química','Ciências Sociais','Educação','Filosofia','Geografia','História','Letras','Psicologia','Ensino de História (Rede)','Políticas Públicas','Biociências e Fisiopatologia','Ciências da Saúde','Ciências Farmacêuticas','Educação Física (UEM/UEL)','Enfermagem','Odontologia Integrada','Administração','Ciências Econômicas (Economia)','Arquitetura e Urbanismo (UEM/UEL)','Bioenergia (Rede)','Ciência da Computação','Engenharia Civil','Engenharia Química'];
+const PM=['Ciências Agrárias','Produção Sustentável e Saúde Animal','Agroecologia','Ensino de Física (Rede)','Ensino das Ciências Ambientais (Rede)','Matemática (Rede)','Música','Educação Inclusiva (Rede)','Letras (Rede)','Processos e Tecnologias Educacionais','Assistência Farmacêutica','Educação Física (Rede)','Gestão, Tecnologia e Inovação em Urgência e Emergência','Ciências Contábeis','Propriedade Intelectual e Transferência de Tecnologia para Inovação','Design','Engenharia de Alimentos','Engenharia de Produção','Engenharia Mecânica','Engenharia Urbana','Sustentabilidade (UEM/IFPR)'];
+const srt=l=>l.sort((a,b)=>a.localeCompare(b,'pt'));
+const LV={'Graduação':srt([...CGRAD]),'Mestrado':srt([...PD,...PM]),'Doutorado':srt([...PD])};
+let vks=new Set(),vkf='',vkl='Graduação',vqc=false;
+const allKeys=()=>{const est=(document.getElementById('vn')||{}).value==='Estágio';return Object.entries(LV).filter(([n])=>!est||n==='Graduação').flatMap(([n,l])=>l.map(c=>n+': '+c))};
+function kcBox(){const l=LV[vkl].filter(c=>norm(c).includes(norm(vkf)));return`<div style="max-height:190px;overflow:auto;border:1px solid var(--line);border-radius:6px;padding:8px">${l.map(c=>{const k=vkl+': '+c;return`<label style="display:block"><input type="checkbox" value="${esc(k)}" ${vks.has(k)?'checked':''} onchange="kcTog(this.value)"> ${esc(c)}</label>`}).join('')||'<span class="m">Nenhum curso encontrado.</span>'}</div>`}
+function kcTabsHtml(){const est=(document.getElementById('vn')||{}).value==='Estágio';
+  const tabs=Object.keys(LV).map(n=>{const c=[...vks].filter(k=>k.startsWith(n+': ')).length;return`<button class="b ${vkl===n?'':'o'}" ${est&&n!=='Graduação'?'disabled':''} onclick="kcLv('${n}')">${n}${c?` (${c})`:''}</button>`}).join(' ');
+  return`<label style="display:block;margin-bottom:6px"><input type="checkbox" ${vqc?'checked':''} onchange="kcAny(this.checked)"> <b>Qualquer curso</b> <span class="m">(marca todos os cursos; todo perfil ganha os 10 pontos do curso)</span></label><p class="m">Áreas de formação: ${vqc?'qualquer curso, todos marcados.':vks.size+' selecionados.'} Escolha o nível e marque os cursos; você pode marcar mais de um nível.</p><div style="margin:6px 0 8px">${tabs}</div>${est?'<p class="m">Estágio é só para graduação.</p>':''}`}
+function kcTabs(){const est=(document.getElementById('vn')||{}).value==='Estágio';if(est&&vkl!=='Graduação')vkl='Graduação';if(vqc)vks=new Set(allKeys());document.getElementById('kt').innerHTML=kcTabsHtml();kcBoxRef()}
+function kcBoxRef(){document.getElementById('kc').innerHTML=kcBox();const f=document.getElementById('kf');if(f)f.placeholder='Filtrar cursos de '+vkl.toLowerCase()}
+function kcLv(n){vkl=n;kcTabs()}
+function kcAny(on){vqc=on;vks=new Set();if(on)allKeys().forEach(k=>vks.add(k));kcTabs()}
+function kcTog(k){vqc=false;vks.has(k)?vks.delete(k):vks.add(k);document.getElementById('kt').innerHTML=kcTabsHtml()}
+function kcFil(v){vkf=v;kcBoxRef()}
+function vVagas(c){
+  if(vsel)return vMatch(c,VG.find(x=>x.id===vsel));
+  if(vform)return vNew();
+  const list=VG.filter(v=>v.cid===c.id).map(v=>{const ints=INV.filter(i=>i.vid===v.id&&i.orig==='aluno');
+    return`<div class="it"><span><b>${esc(v.titulo)}</b> <span class="st on">${esc(v.nat)}</span><br><span class="m">${money(v)}</span><br><span class="m">Técnicas: ${v.tec.map(esc).join(', ')} · Comportamentais: ${v.comp.map(esc).join(', ')||'não informadas'} · Cursos: ${v.qc?'Qualquer curso':v.cursos.map(esc).join(', ')}</span><br><button class="b" style="margin:6px 0" onclick="vsel=${v.id};r()">Ver matching</button>
+    ${ints.length?`<div><b>Interesses de estudantes (${ints.length})</b>${ints.map(i=>{const s=S.find(x=>x.id===i.sid);return`<div class="m" style="margin-top:4px">${esc(s.n)} · ${esc(s.c)} ${i.st==='pendente'?`<button class="b o" onclick="ansCo(${i.id},'aceito')">Aceitar</button> <button class="b o" onclick="ansCo(${i.id},'recusado')">Recusar</button>`:i.st==='aceito'?`<span class="st on">Match aceito</span> Contato: ${esc(mailOf(s))}`:'<span class="st off">Recusado</span>'}</div>`}).join('')}</div>`:''}</span></div>`}).join('')||'<p class="m">Nenhuma vaga cadastrada.</p>';
+  return`<div class="c"><div class="row"><h2 style="margin:0">Vagas</h2><button class="b" onclick="newVaga()">Nova vaga</button></div>${list}</div>`}
+function ansCo(id,st){INV.find(x=>x.id===id).st=st;toast(st==='aceito'?'Match aceito! Contato direto liberado':'Interesse recusado');r()}
+let vt=[];
+const has=(a,x)=>a.some(y=>norm(y)===norm(x));
+const pkReset=k=>{PK[k].sel=new Set();PK[k].fr=[]};
+function newVaga(){vt=[];pkReset('v');vks=new Set();vkf='';vkl='Graduação';vqc=false;vform=true;r()}
+function chips(){return vt.length?vt.map((t,i)=>`<span class="tag">${esc(t)} <button onclick="vt.splice(${i},1);refT()" aria-label="Remover ${esc(t)}" style="border:0;background:none;cursor:pointer;color:inherit;font:inherit">×</button></span>`).join(''):'<span class="m">Nenhuma competência técnica adicionada.</span>'}
+function refT(){document.getElementById('tc').innerHTML=chips()}
+function addTag(){const i=document.getElementById('vx');
+  i.value.split(/[,;]/).map(x=>x.trim().slice(0,40)).filter(Boolean).forEach(p=>{if(!has(vt,p))vt.push(p)});i.value='';refT();i.focus()}
+function pickerHtml(k){const P=PK[k],full=P.sel.size>=P.max;
+  const g=Object.entries(GR).map(([n,l])=>`<div style="margin-bottom:8px"><div class="m"><b>${n}</b></div>${l.map(x=>`<label style="display:inline-block;margin-right:12px"><input type="checkbox" value="${esc(x)}" ${P.sel.has(x)?'checked':''} ${full&&!P.sel.has(x)?'disabled':''} onchange="pkTog('${k}',this.value)"> ${esc(x)}</label>`).join('')}</div>`).join('');
+  return`<p class="m" style="margin-bottom:6px">Da lista: ${P.sel.size} de ${P.max}</p>${g}<label>Outras competências (livres): ${P.fr.length} de ${P.free}<input id="pf${k}" type="text" placeholder="Digite e pressione Enter" oninput="pkSug('${k}')" onkeydown="if(event.key==='Enter'){event.preventDefault();pkAdd('${k}')}"></label><div id="ps${k}" class="m" style="margin-bottom:6px"></div><div>${P.fr.map((t,i)=>`<span class="tag">${esc(t)} <button onclick="pkDel('${k}',${i})" aria-label="Remover ${esc(t)}" style="border:0;background:none;cursor:pointer;color:inherit;font:inherit">×</button></span>`).join('')}</div>`}
+function pkRef(k){document.getElementById('pk'+k).innerHTML=pickerHtml(k)}
+function pkTog(k,v){const P=PK[k];if(P.sel.has(v))P.sel.delete(v);else if(P.sel.size<P.max)P.sel.add(v);pkRef(k)}
+function pkDel(k,i){PK[k].fr.splice(i,1);pkRef(k)}
+function pkSug(k){const q=norm(document.getElementById('pf'+k).value.trim()),el=document.getElementById('ps'+k);
+  const l=q.length<2?[]:SOFT.filter(x=>norm(x).includes(q)&&!PK[k].sel.has(x)).slice(0,6);
+  el.innerHTML=l.length?'Itens parecidos na lista: '+l.map(x=>`<button class="b o" style="padding:2px 8px;margin:2px" data-x="${esc(x)}" onclick="pkTog('${k}',this.dataset.x)">${esc(x)}</button>`).join(''):''}
+function pkAdd(k){const P=PK[k],i=document.getElementById('pf'+k);
+  i.value.split(/[,;]/).map(x=>x.trim().slice(0,40)).filter(Boolean).forEach(p=>{
+    const it=SOFT.find(y=>norm(y)===norm(p));
+    if(it){if(P.sel.has(it)){}else if(P.sel.size<P.max)P.sel.add(it);else toast('Limite de '+P.max+' competências da lista')}
+    else if(has(P.fr,p)){}else if(P.fr.length<P.free)P.fr.push(p);else toast('Limite de '+P.free+' competências livres')});
+  pkRef(k);document.getElementById('pf'+k).focus()}
+function vNew(){return`<div class="c" style="max-width:680px"><h2>Nova vaga</h2><div class="f">${inp('vt','Título da vaga')}${sel('vn','Natureza',['Selecione a natureza',...NAT],'kcTabs()')}<label>Competências técnicas<input id="vx" type="text" placeholder="Digite e pressione Enter (ex.: Python)" onkeydown="if(event.key==='Enter'){event.preventDefault();addTag()}"></label><div id="tc" style="margin:-4px 0 12px">${chips()}</div><p class="m">Competências comportamentais desejadas (até 6 da lista e 2 livres)</p><div id="pkv" style="margin-bottom:10px">${pickerHtml('v')}</div><div id="kt">${kcTabsHtml()}</div><input id="kf" type="text" placeholder="Filtrar cursos de graduação" oninput="kcFil(this.value)"><div id="kc" style="margin:6px 0 10px">${kcBox()}</div>${inp('vv','Valor a ser pago (R$ por mês)','number')}${inp('vh','Carga horária semanal (horas)','number')}${inp('vb','Benefícios (opcional)')}</div><button class="b" onclick="saveVaga()">Publicar vaga</button> <button class="b o" onclick="vform=false;r()">Cancelar</button></div>`}
+function saveVaga(){const g=i=>document.getElementById(i).value.trim();
+  if(g('vx'))addTag();if(g('pfv'))pkAdd('v');
+  const v={id:VG.length+1,cid:ce,titulo:g('vt'),nat:g('vn'),tec:[...vt],comp:[...PK.v.sel,...PK.v.fr],cursos:[...vks],qc:vqc,valor:+g('vv'),ch:+g('vh'),ben:g('vb')};
+  if(!NAT.includes(v.nat)){toast('Escolha a natureza da vaga');return}
+  if(!v.titulo||!v.tec.length||!v.cursos.length){toast('Informe título, competências técnicas e ao menos um curso');return}
+  if(v.nat==='Estágio'&&v.cursos.some(k=>!k.startsWith('Graduação: '))){toast('Estágio é só para graduação: remova os cursos de mestrado e doutorado');return}
+  if(!(v.valor>0)||!(v.ch>0)){toast('Valor e carga horária semanal são obrigatórios');return}
+  if(v.nat==='Estágio'&&v.ch>30){toast('Estágio no ensino superior tem limite de 30 horas semanais');return}
+  VG.push(v);vform=false;toast('Vaga publicada');r()}
+function vMatch(c,v){
+  const res=S.filter(s=>s.pub).map(s=>({s,m:matchV(s,v)})).filter(x=>x.m).sort((a,b)=>b.m.pts-a.m.pts).slice(0,50);
+  return`<div class="c"><button class="b o" onclick="vsel=null;r()">Voltar às vagas</button><h2 style="margin-top:12px">${esc(v.titulo)} <span class="st on">${esc(v.nat)}</span></h2><p class="m">${money(v)}</p><p class="m" style="margin-top:6px">Até 50 perfis publicados e elegíveis, por compatibilidade. Nada é enviado automaticamente: você escolhe a quem convidar.</p></div>
+  ${res.map(({s,m})=>`<div class="c"><div class="row"><div><h2 style="margin:0">${esc(s.n)}</h2><span class="m">${esc(s.tp)} · ${esc(s.c)} · ${esc(s.p)} · ${esc(s.d)}</span></div><span class="sc">${m.pts}%</span></div><div class="bar"><i style="width:${m.pts}%"></i></div><div style="margin:8px 0">${why(m,v)}</div><button class="b o" onclick="goInv(${s.id},${v.id})">Ver perfil e convidar</button></div>`).join('')||'<div class="c m">Nenhum perfil elegível e compatível com esta vaga.</div>'}`}
+function goInv(sid,vid){const s=S.find(x=>x.id===sid);bn=s.nv;bc=s.c;bs=sid;bq='';pv=VG.find(x=>x.id===vid).titulo;vsel=null;csub='b';r()}
+function vVit(s){
+  const cos=CO.filter(c=>c.st==='aprovada'),sets=['Todos',...new Set(cos.map(c=>c.setor))];
+  const op=(a,cur)=>a.map(x=>`<option ${cur===x?'selected':''}>${x}</option>`).join('');
+  const f=`<div class="c"><div class="row"><label class="m">Setor <select onchange="ef.set=this.value;r()">${op(sets,ef.set)}</select></label><label class="m">Tipo de vaga <select onchange="ef.nat=this.value;r()">${op(['Todas',...NAT],ef.nat)}</select></label><label class="m"><input type="checkbox" ${ef.onlyc?'checked':''} onchange="ef.onlyc=this.checked;r()"> Só vagas compatíveis com meu perfil</label></div>${s.pub?'':'<p class="m" style="margin-top:8px">Publique seu perfil para manifestar interesse nas vagas.</p>'}</div>`;
+  const cards=cos.filter(c=>ef.set==='Todos'||c.setor===ef.set).map(c=>{
+    const vs=VG.filter(v=>v.cid===c.id&&(ef.nat==='Todas'||v.nat===ef.nat)).map(v=>({v,m:matchV(s,v)})).filter(x=>!ef.onlyc||x.m);
+    if(!vs.length)return'';
+    return`<div class="c"><h2>${esc(c.nf)}</h2><p class="m">${esc(c.setor)} · ${esc(c.cid)}/${esc(c.uf)} · Convênio de estágio com a UEM: ${esc(c.conv)}</p><p style="margin:6px 0">${esc(c.txt)}</p>${vs.map(({v,m})=>{const it=INV.find(i=>i.orig==='aluno'&&i.vid===v.id&&i.sid===s.id);
+      const act=it?(it.st==='aceito'?`<span class="st on">Match aceito</span> <span class="m">Contato: ${esc(c.resp)}, ${esc(c.cargo)}, ${esc(c.mail)}</span>`:`<span class="st off">${it.st==='pendente'?'Interesse enviado, aguardando':'Recusado'}</span>`):`<button class="b o" ${s.pub?'':'disabled'} onclick="interest(${v.id})">Tenho interesse</button>`;
+      return`<div class="it"><span><b>${esc(v.titulo)}</b> <span class="st on">${esc(v.nat)}</span> ${m?`<span class="tag">Compatibilidade ${m.pts}%</span>`:'<span class="m">Sem compatibilidade com seu perfil</span>'}<br><span class="m">${money(v)}</span><br>${act}</span></div>`}).join('')}</div>`}).join('');
+  return f+(cards||'<div class="c m">Nenhuma vaga com esses filtros.</div>');
+}
+function interest(vid){const v=VG.find(x=>x.id===vid);INV.push({id:INV.length+1,cid:v.cid,sid:cs,msg:'Interesse na vaga',vaga:v.titulo,st:'pendente',orig:'aluno',vid});toast('Interesse enviado à empresa');r()}
+function tally(list){const seen={},m={};list.forEach(x=>{const k=norm(String(x));const l=seen[k]||(seen[k]=x);m[l]=(m[l]||0)+1});return m}
+function bars(m,max=6,sort=true){let t=Object.entries(m);if(sort)t.sort((a,b)=>b[1]-a[1]);t=t.slice(0,max);if(!t.length)return'<p class="m">Sem dados.</p>';const mx=Math.max(1,...t.map(x=>x[1]));return t.map(([k,n])=>`<div style="margin-bottom:8px"><div class="row"><span>${esc(k)}</span><span class="m">${n}</span></div><div class="bar"><i style="width:${n/mx*100}%"></i></div></div>`).join('')}
+const pc=(a,b)=>b?Math.round(a/b*100)+'%':'0%';
+const card=(t,b)=>`<div class="c"><h2>${t}</h2>${b}</div>`;
+const sec=t=>`<h2 style="font-size:18px;margin:20px 0 10px">${t}</h2>`;
+function vP(){
+  const p=S.filter(s=>s.pub),co=CO.filter(c=>c.st==='aprovada'),ct=INV.filter(i=>i.orig!=='aluno'),it=INV.filter(i=>i.orig==='aluno');
+  const ac=INV.filter(i=>i.st==='aceito').length,rc=INV.filter(i=>i.st==='recusado').length,pe=INV.length-ac-rc;
+  const kp=(n,l)=>`<div class="c"><strong>${n}</strong>${l}</div>`;
+  const supN={};Object.entries(tally(p.flatMap(skills))).forEach(([k,n])=>supN[norm(k)]=n);
+  const gap=Object.entries(tally(VG.flatMap(v=>v.tec))).map(([k,n])=>({k,n,o:supN[norm(k)]||0})).sort((a,b)=>(a.o/a.n)-(b.o/b.n)||b.n-a.n).slice(0,6);
+  const nat=NAT.map(n=>{const l=VG.filter(v=>v.nat===n);return l.length?`<tr><td>${n}</td><td>${l.length}</td><td>R$ ${Math.round(l.reduce((a,v)=>a+v.valor,0)/l.length).toLocaleString('pt-BR')}</td><td>${Math.round(l.reduce((a,v)=>a+v.ch,0)/l.length)}h</td></tr>`:''}).join('');
+  return`<div class="st4">${kp(S.length,'perfis gerados do SIGAA')}${kp(p.length,'publicados ('+pc(p.length,S.length)+' de adesão)')}${kp(S.filter(s=>s.acct).length,'contas ativadas')}${kp(p.filter(s=>recs(s).length).length,'publicados com recomendação de orientador')}${kp(co.length,'empresas aprovadas ('+(CO.length-co.length)+' em análise)')}${kp(VG.length,'vagas cadastradas')}${kp(INV.length,'contatos iniciados (convites e interesses)')}${kp(ac,'matches aceitos ('+pc(ac,ac+rc)+' das respostas)')}</div>
+  ${sec('Estudantes e egressos (perfis publicados)')}
+  <div class="g2">${card('Por nível',bars(tally(p.map(s=>s.nv)),3,false))}${card('Estudantes e egressos',bars(tally(p.map(s=>s.tp)),3))}${card('Disponibilidade',bars(tally(p.map(s=>s.d)),4))}${card('Cursos com mais perfis',bars(tally(p.map(s=>s.c)),6))}${card('Competências técnicas mais frequentes',bars(tally(p.flatMap(skills)),8))}${card('Competências comportamentais mais confirmadas por orientadores',bars(tally(p.flatMap(s=>recs(s).flatMap(q=>[...(q.ss||[]),...(q.sf||[])]))),8))}</div>
+  ${sec('Empresas e vagas')}
+  <div class="g2">${card('Empresas por setor',bars(tally(co.map(c=>c.setor)),6))}${card('Empresas por cidade',bars(tally(co.map(c=>c.cid+'/'+c.uf)),6))}${card('Vagas por natureza, valor e carga médios',nat?`<div class="tw"><table><tr><th>Natureza</th><th>Vagas</th><th>Valor médio</th><th>Carga média</th></tr>${nat}</table></div>`:'<p class="m">Sem dados.</p>')}${card('Cursos mais procurados pelas vagas',bars(tally(VG.filter(v=>!v.qc).flatMap(v=>v.cursos)),6)+`<p class="m" style="margin-top:6px">Vagas abertas a qualquer curso: ${VG.filter(v=>v.qc).length}</p>`)}${card('Competências técnicas mais pedidas',bars(tally(VG.flatMap(v=>v.tec)),8))}${card('Competências comportamentais mais pedidas',bars(tally(VG.flatMap(v=>v.comp)),8))}</div>
+  ${sec('Demanda e oferta de competências')}
+  <div class="g2">${card('Competências pedidas nas vagas e oferta nos perfis (menor oferta primeiro)',gap.map(g=>`<div class="row" style="margin-bottom:6px"><span>${esc(g.k)}</span><span class="m">${g.o?'em '+g.o+' perfil(is)':'<b>sem perfis</b>'} · pedida em ${g.n} vaga(s)</span></div>`).join('')||'<p class="m">Sem dados.</p>')}${card('Perfis compatíveis por vaga',VG.map(v=>`<div class="row" style="margin-bottom:6px"><span>${esc(v.titulo)} <span class="m">${esc(CO.find(c=>c.id===v.cid).nf)}</span></span><span class="m">${p.filter(s=>matchV(s,v)).length} perfil(is)</span></div>`).join(''))}</div>
+  ${sec('Contatos e matches')}
+  <div class="g2">${card('Do contato ao match',bars({'Convites de empresas':ct.length,'Interesses de estudantes':it.length,'Aguardando resposta':pe,'Aceitos (matches)':ac,'Recusados':rc},5,false))}${card('Contatos por empresa',CO.filter(c=>c.st==='aprovada').map(c=>{const l=INV.filter(i=>i.cid===c.id);return`<div class="row" style="margin-bottom:6px"><span>${esc(c.nf)}</span><span class="m">${l.length} contato(s) · ${l.filter(i=>i.st==='aceito').length} aceito(s)</span></div>`}).join(''))}</div>`;
+}
+const oriMail=n=>n.replace(/^Profa?\.\s*(Dra?\.\s*)?/,'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim().replace(/\s+/g,'.')+'@uem.br';
+const ori=s=>{const i=s.it.find(x=>x.o);return i?i.o:''};
+const recs=s=>(s.rq||[]).filter(q=>q.st==='recebida');
+function oris(s){const m={};s.it.forEach(i=>{if(i.o)(m[i.o]=m[i.o]||{n:i.o,items:[]}).items.push(i)});return Object.values(m)}
+const projs=o=>o.items.map(i=>i.t+': '+i.ti);
+function recBox(s){
+  const os=oris(s),rq=s.rq||[],tags=q=>[...(q.sk||[]),...(q.ss||[]),...(q.sf||[])].map(x=>`<span class="tag">${esc(x)}</span>`).join('');
+  let h=`<div class="c"><h2>Recomendações dos orientadores <span class="m">(opcional)</span></h2>`;
+  h+=recs(s).map(q=>`<div class="it"><span>“${esc(q.txt)}”<br><span class="m">${esc(q.o)}${q.projs&&q.projs.length?' · '+q.projs.map(esc).join('; '):''} confirmou:</span> ${tags(q)}</span></div>`).join('');
+  if(!os.length)return h+'<p class="m">Nenhum orientador encontrado no SIGAA para seus projetos.</p></div>';
+  h+=`<p class="m" style="margin:8px 0">Estes orientadores vêm dos seus projetos no SIGAA. Cada pedido envia um e-mail ao endereço institucional do orientador. Pedidos: ${rq.length} de 5.</p>`;
+  h+=os.map(o=>{const q=rq.find(x=>x.o===o.n);let act;
+    if(!q)act=`<button class="b o" ${rq.length>=5?'disabled':''} data-o="${esc(o.n)}" onclick="askOri(this.dataset.o)">Pedir recomendação</button>`;
+    else if(q.st==='recebida')act='<span class="st on">Recomendação recebida</span>';
+    else act=`<span class="st off">Aguardando resposta</span> <details style="margin-top:6px"><summary class="m" style="cursor:pointer">Ver e-mail enviado</summary><div class="nv" style="margin-top:6px;background:var(--tag);color:var(--ink)"><b>Para:</b> ${esc(oriMail(o.n))}<br><b>Assunto:</b> Pedido de recomendação de ${esc(s.n)} no UEM CONECTA+<br><br>Olá, ${esc(o.n)}. ${esc(s.n)} (${esc(s.c)}) pede uma recomendação curta, de até 400 caracteres, sobre o que você viu em: ${projs(o).map(esc).join('; ')}. Pelo link abaixo você confirma competências e escreve o texto.<br><br><u>Abrir link da recomendação</u></div></details> <button class="b o" style="margin-top:6px" data-o="${esc(o.n)}" onclick="simOri(this.dataset.o)">${s.sim===o.n?'Fechar simulação':'Simular resposta do orientador'}</button>`;
+    const form=s.sim===o.n&&q&&q.st==='aguardando'?`<div style="border-top:1px solid var(--line);margin-top:12px;padding-top:12px"><p class="m">Simulação: é isto que ${esc(o.n)} vê ao abrir o link do e-mail. A pessoa é identificada pelo login institucional.</p><p style="margin:10px 0 4px"><b>Competências técnicas que você confirma</b></p>${[...new Set(o.items.flatMap(i=>i.k))].map(k=>`<label style="display:inline-block;margin-right:12px"><input class="ck" type="checkbox" value="${esc(k)}"> ${esc(k)}</label>`).join('')}<p style="margin:12px 0 4px"><b>Competências comportamentais que você confirma</b> <span class="m">(até 8 da lista e 2 livres)</span></p><div id="pko">${pickerHtml('o')}</div><p style="margin:12px 0 4px"><b>Recomendação</b> <span class="m">(até 400 caracteres)</span></p><textarea id="rt" maxlength="400" rows="5" oninput="document.getElementById('rc').textContent=this.value.length"></textarea><div class="m"><span id="rc">0</span>/400</div><button class="b" style="margin-top:8px" data-o="${esc(o.n)}" onclick="send(this.dataset.o)">Enviar recomendação</button></div>`:'';
+    return`<div class="it" style="display:block"><b>${esc(o.n)}</b><br><span class="m">${projs(o).map(esc).join(' · ')}</span><div style="margin-top:6px">${act}</div>${form}</div>`}).join('');
+  return h+'</div>';
+}
+function askOri(n){const s=S.find(x=>x.id===cs);if((s.rq||[]).length>=5){toast('Limite de 5 pedidos');return}(s.rq=s.rq||[]).push({o:n,st:'aguardando'});toast('E-mail enviado para '+oriMail(n));r()}
+function simOri(n){const s=S.find(x=>x.id===cs);pkReset('o');s.sim=s.sim===n?'':n;r()}
+function send(n){const s=S.find(x=>x.id===cs),t=document.getElementById('rt').value.trim();
+  const pf=document.getElementById('pfo');if(pf&&pf.value.trim())pkAdd('o');
+  if(t.length<20){toast('Escreva ao menos 20 caracteres');return}
+  const q=(s.rq||[]).find(x=>x.o===n),o=oris(s).find(x=>x.n===n);
+  Object.assign(q,{st:'recebida',projs:projs(o),txt:t,sk:[...document.querySelectorAll('.ck:checked')].map(x=>x.value),ss:[...PK.o.sel],sf:[...PK.o.fr]});s.sim='';toast('Recomendação recebida de '+n);r()}
+function vD(){
+  const rows=[['Nome, curso e período','Cadastro do discente e matrícula','Sim, com aval'],['Iniciação científica','Módulo de pesquisa (projetos e planos de trabalho)','Sim, com aval'],['TCC','Módulo de graduação (trabalhos de conclusão e orientação)','Sim, com aval'],['Estágio','Módulo de estágios','Sim, com aval'],['Extensão','Módulo de extensão (participação em ações)','Sim, com aval'],['Competências','Palavras-chave e área dos projetos e TCCs','Sim, com aval'],['Orientador','Vínculo de orientação nos projetos','Sim, com aval'],['Disponibilidade','Informada pelo estudante na plataforma','Sim, com aval'],['Disciplinas cursadas (aprovadas e em andamento)','Histórico escolar, apenas os nomes das disciplinas','Sim, com aval'],['Notas, faltas, reprovações e trancamentos','Módulo de graduação','Nunca'],['CPF, RG e documentos','Dados pessoais','Nunca'],['Foto, endereço, telefone e e-mail pessoal','Dados pessoais','Nunca']];
+  return`<div class="c"><h2>De onde vem cada parte do perfil</h2><p class="m" style="margin-bottom:10px">Fontes sugeridas no SIGAA. Os módulos e campos exatos precisam ser confirmados com o NPD/UEM antes da implantação.</p><div class="tw"><table><tr><th>Parte do perfil</th><th>Fonte sugerida no SIGAA</th><th>Publicado?</th></tr>${rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td><span class="st ${r[2]==='Nunca'?'off':'on'}">${r[2]}</span></td></tr>`).join('')}</table></div></div>
+  <div class="nv">Princípios: o perfil só usa dados acadêmicos públicos, nada é publicado sem o aval do estudante e ele pode ocultar itens ou despublicar a qualquer momento.</div>`;
+}
+function r(){document.getElementById('v').innerHTML=tab==='e'?vE():tab==='c'?vEmp():tab==='p'?vP():vD()}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;document.querySelectorAll('nav button').forEach(x=>x.setAttribute('aria-selected',x===b));r()});
+r();
+</script>
+</body>
+</html>
